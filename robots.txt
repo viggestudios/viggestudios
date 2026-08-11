@@ -1,0 +1,37 @@
+# Vigge Studios — alt indhold er offentligt og må gerne indekseres.
+
+User-agent: *
+Allow: /
+
+# AI-crawlere står eksplicit, så det er dokumenteret at de er
+# velkomne. Bliver de blokeret, forsvinder siden fra ChatGPT,
+# Perplexity og Google AI Overviews — også selvom den ranker fint
+# i almindelig søgning.
+User-agent: Googlebot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+Sitemap: https://www.viggestudios.com/sitemap.xml

@@ -1,266 +1,883 @@
 <!DOCTYPE html>
 <html lang="da">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Vigge Studios leverer professionelle DJs samt udlejning af lyd, lys og røgmaskiner til private fester og erhvervsarrangementer.">
-  <meta name="theme-color" content="#FCC662">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="description" content="Vigge Studios leverer professionelle DJs samt udlejning af lyd, lys og røgmaskiner til private fester og erhvervsarrangementer.">
+<meta name="theme-color" content="#1A0A03">
 
-  <meta property="og:title" content="Vigge Studios | DJ, lyd, lys og events">
-  <meta property="og:description" content="Professionelle DJs samt lyd, lys og røgmaskiner til private fester og erhvervsarrangementer.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://www.viggestudios.com">
-  <meta property="og:image" content="https://www.viggestudios.com/strandbar.jpeg">
+<!-- Siden svarer på både www, apex og github.io. Uden canonical
+     tæller de som tre kopier af samme indhold. -->
+<link rel="canonical" href="https://www.viggestudios.com/">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
 
-  <title>Vigge Studios | DJ, lyd, lys og events</title>
+<!-- og:image SKAL være absolut. Med en relativ sti viser Facebook,
+     LinkedIn og WhatsApp ingenting når linket deles. -->
+<meta property="og:title" content="Vigge Studios | DJ, lyd, lys og events">
+<meta property="og:description" content="Professionelle DJs samt lyd, lys og røgmaskiner til private fester og erhvervsarrangementer.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.viggestudios.com/">
+<meta property="og:site_name" content="Vigge Studios">
+<meta property="og:locale" content="da_DK">
+<meta property="og:image" content="https://www.viggestudios.com/assets/strandbar.jpeg">
+<meta property="og:image:alt" content="Vigge Studios – DJ-opsætning med lys til fest">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Vigge Studios | DJ, lyd, lys og events">
+<meta name="twitter:description" content="Professionelle DJs samt lyd, lys og røgmaskiner til private fester og erhvervsarrangementer.">
+<meta name="twitter:image" content="https://www.viggestudios.com/assets/strandbar.jpeg">
 
-  <link rel="icon" type="image/png" href="vigge-studios-logo.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
-  <script defer src="script.js"></script>
+<title>Vigge Studios | DJ, lyd, lys og events</title>
+
+<link rel="icon" type="image/png" href="assets/vigge-studios-logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,700;1,9..144,500&family=Outfit:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "@id": "https://www.viggestudios.com/#virksomhed",
+  "name": "Vigge Studios",
+  "url": "https://www.viggestudios.com/",
+  "description": "Professionelle DJs samt udlejning af lyd, lys og røgmaskiner til private fester og erhvervsarrangementer.",
+  "email": "viggestudiosprimary@gmail.com",
+  "telephone": "+4561383689",
+  "image": "https://www.viggestudios.com/assets/strandbar.jpeg",
+  "logo": "https://www.viggestudios.com/assets/vigge-studios-logo.png",
+  "sameAs": ["https://www.instagram.com/viggestudios/"],
+  "areaServed": { "@type": "Country", "name": "Danmark" },
+  "knowsLanguage": "da",
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "contactType": "Booking og forespørgsler",
+    "telephone": "+4561383689",
+    "email": "viggestudiosprimary@gmail.com",
+    "availableLanguage": "da"
+  },
+  "makesOffer": [
+    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Professionelle DJs",
+      "description": "Musikken tilpasses gæsterne, stedet og stemningen på dansegulvet." } },
+    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Lydudstyr",
+      "description": "Lydanlæg til private fester og erhvervsarrangementer i forskellige størrelser." } },
+    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Lysudstyr",
+      "description": "Dansegulvslys og stemningsbelysning, som giver et gennemført udtryk." } },
+    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Røgmaskiner",
+      "description": "Effekter, der gør lyset tydeligere og skaber mere liv omkring dansegulvet." } }
+  ]
+}
+</script>
 </head>
 
-<body>
-  <header class="site-header">
-    <a class="brand" href="#top" aria-label="Vigge Studios – gå til forsiden">
-      <img src="vigge-studios-logo.png" alt="Vigge Studios logo">
-      <span>Vigge Studios</span>
+<body data-beat="124">
+
+<!-- ============ CURSOR ============ -->
+<div class="cursor" id="cursor" aria-hidden="true"><span class="cursor-dot"></span><span class="cursor-ring"></span><span class="cursor-label"></span></div>
+
+<!-- ============ AMBIENT LIGHT CANVAS ============ -->
+<canvas class="lightfield" id="lightfield" aria-hidden="true"></canvas>
+<div class="grain" aria-hidden="true"></div>
+
+<!-- ============ HEADER ============ -->
+<header class="site-header" id="header">
+  <a class="brand" href="#top" aria-label="Vigge Studios – gå til toppen">
+    <span class="brand-mark"><img src="assets/vigge-studios-logo.png" alt=""></span>
+    <span class="brand-name">vigge studios</span>
+  </a>
+
+  <nav class="nav" aria-label="Hovedmenu">
+    <a href="#om"><span>Om os</span></a>
+    <a href="#services"><span>Services</span></a>
+    <a href="#stemning"><span>Stemning</span></a>
+    <a href="#events"><span>Arrangementer</span></a>
+  </nav>
+
+  <div class="header-right">
+    <a class="ig-link" href="https://instagram.com/viggestudios" target="_blank" rel="noopener noreferrer" aria-label="Vigge Studios på Instagram">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="2.5" width="19" height="19" rx="5.5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.6" cy="6.4" r="1.3" class="ig-dot"/></svg>
+    </a>
+    <a class="btn btn-sm btn-solid" href="#kontakt"><span>Kontakt os</span></a>
+    <button class="burger" id="burger" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Åbn menu">
+      <i></i><i></i><i></i>
+    </button>
+  </div>
+</header>
+
+<!-- ============ MOBILE MENU ============ -->
+<div class="mobile-menu" id="mobile-menu" hidden>
+  <nav aria-label="Mobilmenu">
+    <a href="#om"><em>01</em> Om os</a>
+    <a href="#services"><em>02</em> Services</a>
+    <a href="#stemning"><em>03</em> Stemning</a>
+    <a href="#events"><em>04</em> Arrangementer</a>
+    <a href="#kontakt"><em>05</em> Kontakt</a>
+  </nav>
+  <div class="mobile-menu-foot">
+    <a href="tel:+4561383689">61 38 36 89</a>
+    <a href="https://instagram.com/viggestudios" target="_blank" rel="noopener noreferrer">@viggestudios</a>
+  </div>
+</div>
+
+<main id="top">
+
+  <!-- ============ HERO ============ -->
+  <section class="hero" id="hero">
+    <div class="hero-bg" aria-hidden="true">
+      <video id="hero-video" autoplay muted loop playsinline preload="auto" poster="assets/strandbar.jpeg">
+        <source src="assets/hero-studenterfest.mp4" type="video/mp4">
+      </video>
+      <div class="hero-bg-tint"></div>
+    </div>
+
+    <!-- 3D disco ball -->
+    <div class="ball-stage" aria-hidden="true">
+      <div class="ball-rig" id="ball-rig">
+        <div class="ball-glow"></div>
+        <div class="ball-cord"></div>
+        <div class="ball" id="ball"></div>
+        <div class="ball-spec"></div>
+        <div class="ball-shine"></div>
+      </div>
+      <div class="beams" id="beams"></div>
+    </div>
+
+    <div class="hero-inner">
+      <p class="eyebrow hero-eyebrow"><i class="pip"></i>DJ · LYD · LYS · EVENTS</p>
+
+      <h1 class="hero-title">
+        <span class="line"><span class="w">Vi</span> <span class="w">skaber</span> <span class="w">stemningen</span></span>
+        <span class="line"><span class="w">til</span> <span class="w em">jeres</span> <span class="w em">næste</span> <span class="w em">event.</span></span>
+      </h1>
+
+      <p class="hero-text">
+        Professionelle DJs samt udlejning af lyd, lys og røgmaskiner til private
+        fester og erhvervsarrangementer.
+      </p>
+
+      <div class="hero-actions">
+        <a class="btn btn-solid btn-lg" href="#kontakt"><span>Book en dato</span></a>
+        <a class="btn btn-ghost btn-lg" href="#services"><span>Se vores services</span></a>
+      </div>
+
+      <div class="hero-meta">
+        <span class="hero-badge"><i class="pip"></i>Rigtige fester · Rigtig stemning</span>
+        <div class="vu" id="vu" aria-hidden="true"></div>
+      </div>
+    </div>
+
+    <a class="scroll-cue" href="#om" aria-label="Scroll ned">
+      <span class="scroll-cue-line"></span>
+      <span class="scroll-cue-text">Scroll</span>
+    </a>
+  </section>
+
+  <!-- ============ MARQUEE ============ -->
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track" id="marquee-track">
+      <span>Fødselsdage</span><i>✦</i><span>Bryllupper</span><i>✦</i><span>Firmafester</span><i>✦</i>
+      <span>Julefrokoster</span><i>✦</i><span>Studentergilder</span><i>✦</i><span>Jubilæer</span><i>✦</i>
+      <span>Festivaler</span><i>✦</i><span>Natklubber</span><i>✦</i>
+    </div>
+  </div>
+
+  <!-- ============ OM ============ -->
+  <section class="section about" id="om">
+    <div class="wrap about-grid">
+      <div class="about-copy copy-block" data-reveal>
+        <p class="eyebrow"><i class="pip"></i>OM VIGGE STUDIOS</p>
+        <h2 class="h2">En samlet løsning<br>til en <em>vellykket fest</em></h2>
+        <p class="lead">
+          Vigge Studios hjælper private og virksomheder med at skabe den rette
+          stemning. Vi kombinerer professionelle DJs med lyd, lys og røgmaskiner,
+          så festen både lyder og ser godt ud.
+        </p>
+        <p class="body">
+          Hver løsning tilpasses arrangementets størrelse, gæster og ønsker.
+          Målet er enkelt: en professionel oplevelse og et dansegulv, som gæsterne
+          har lyst til at blive på.
+        </p>
+
+        <ul class="tick-list">
+          <li><span>Private fester</span></li>
+          <li><span>Erhvervsarrangementer</span></li>
+        </ul>
+      </div>
+
+      <div class="about-visual" data-reveal>
+        <figure class="tilt-card" data-tilt>
+          <img src="assets/dj-strand.jpeg" alt="DJ-setup med Pioneer-controller under åben strandpavillon" loading="lazy">
+          <figcaption>Opsætning før gæsterne kommer</figcaption>
+        </figure>
+
+        <!-- 3D vinyl prop -->
+        <div class="vinyl-prop" id="vinyl-prop" aria-hidden="true">
+          <div class="vinyl">
+            <div class="vinyl-grooves"></div>
+            <div class="vinyl-label"><img src="assets/vigge-studios-logo.png" alt=""></div>
+            <div class="vinyl-sheen"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SERVICES ============ -->
+  <section class="section services" id="services">
+    <div class="wrap">
+      <div class="section-head" data-reveal>
+        <p class="eyebrow"><i class="pip"></i>VORES SERVICES</p>
+        <h2 class="h2">Det kan Vigge Studios <em>levere</em></h2>
+        <p class="lead">I kan booke en DJ, leje udstyr eller få en samlet løsning.</p>
+      </div>
+
+      <div class="service-list">
+
+        <!-- 01 DJ -->
+        <article class="service" data-reveal data-prop="turntable">
+          <div class="service-copy">
+            <span class="service-no">01</span>
+            <h3>Professionelle DJs</h3>
+            <p>Musikken tilpasses gæsterne, stedet og stemningen på dansegulvet.</p>
+          </div>
+          <div class="service-prop">
+            <div class="prop prop-turntable">
+              <div class="tt-shadow"></div>
+              <div class="tt-deck">
+                <div class="tt-platter"><div class="tt-vinyl"><i></i><b></b></div></div>
+                <div class="tt-arm"><span class="tt-arm-head"></span></div>
+                <div class="tt-pitch"><span></span></div>
+                <div class="tt-led"></div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- 02 Lyd -->
+        <article class="service" data-reveal data-prop="speaker">
+          <div class="service-copy">
+            <span class="service-no">02</span>
+            <h3>Lydudstyr</h3>
+            <p>Lydanlæg til private fester og erhvervsarrangementer i forskellige størrelser.</p>
+          </div>
+          <div class="service-prop">
+            <div class="prop prop-speaker">
+              <div class="sp-shadow"></div>
+              <div class="sp-box">
+                <div class="sp-face">
+                  <div class="sp-tweeter"><i></i></div>
+                  <div class="sp-woofer"><i></i><b></b></div>
+                  <div class="sp-badge">vigge</div>
+                </div>
+                <div class="sp-side"></div>
+                <div class="sp-top"></div>
+              </div>
+              <div class="sp-waves"><i></i><i></i><i></i></div>
+            </div>
+          </div>
+        </article>
+
+        <!-- 03 Lys -->
+        <article class="service" data-reveal data-prop="light">
+          <div class="service-copy">
+            <span class="service-no">03</span>
+            <h3>Lysudstyr</h3>
+            <p>Dansegulvslys og stemningsbelysning, som giver et gennemført udtryk.</p>
+          </div>
+          <div class="service-prop">
+            <div class="prop prop-light">
+              <div class="lt-truss"><i></i><i></i><i></i><i></i></div>
+              <div class="lt-rig">
+                <div class="lt-yoke"></div>
+                <div class="lt-head"><span class="lt-lens"></span></div>
+                <div class="lt-beam"></div>
+              </div>
+              <div class="lt-rig lt-rig-b">
+                <div class="lt-yoke"></div>
+                <div class="lt-head"><span class="lt-lens"></span></div>
+                <div class="lt-beam"></div>
+              </div>
+              <div class="lt-floor"></div>
+            </div>
+          </div>
+        </article>
+
+        <!-- 04 Røg -->
+        <article class="service" data-reveal data-prop="fog">
+          <div class="service-copy">
+            <span class="service-no">04</span>
+            <h3>Røgmaskiner</h3>
+            <p>Effekter, der gør lyset tydeligere og skaber mere liv omkring dansegulvet.</p>
+          </div>
+          <div class="service-prop">
+            <div class="prop prop-fog">
+              <div class="fog-puffs"><i></i><i></i><i></i><i></i><i></i></div>
+              <div class="fog-box">
+                <div class="fog-face"><span class="fog-nozzle"></span><span class="fog-led"></span><span class="fog-grip"></span></div>
+                <div class="fog-side"></div>
+                <div class="fog-top"></div>
+              </div>
+              <div class="fog-shadow"></div>
+            </div>
+          </div>
+        </article>
+
+      </div>
+
+      <p class="service-note" data-reveal>
+        Til festivaler og natklubber leverer Vigge Studios professionelle DJs.
+        Lyd-, lys- og røgløsninger tilbydes til private arrangementer og firmaevents.
+      </p>
+    </div>
+  </section>
+
+  <!-- ============ STEMNING ============ -->
+  <section class="section atmosphere" id="stemning">
+    <div class="wrap">
+      <div class="section-head" data-reveal>
+        <p class="eyebrow"><i class="pip"></i>OPLEV STEMNINGEN</p>
+        <h2 class="h2">Fra opsætning til <em>fyldt dansegulv</em></h2>
+        <p class="lead">Alt indhold her er fra arrangementer, hvor Vigge Studios har været med.</p>
+      </div>
+    </div>
+
+    <div class="wrap wide">
+      <div class="gallery">
+        <figure class="g-item g-wide" data-reveal data-parallax="0.06">
+          <img src="assets/strandbar.jpeg" alt="Fyldt dansegulv udendørs med lyskæder over gæsterne" loading="lazy">
+          <figcaption><span>Udendørs arrangement</span></figcaption>
+        </figure>
+
+        <figure class="g-item g-tall g-video" data-reveal data-parallax="0.1">
+          <video muted loop playsinline preload="metadata" poster="assets/fest-indendoers.jpeg" data-autoplay>
+            <source src="assets/dansegulv-klub.mp4" type="video/mp4">
+          </video>
+          <figcaption><span>Dansegulv</span></figcaption>
+        </figure>
+
+        <figure class="g-item" data-reveal data-parallax="0.08">
+          <img src="assets/event-have.jpeg" alt="DJ med højttalere på stativ til privat havearrangement" loading="lazy">
+          <figcaption><span>Privat havefest</span></figcaption>
+        </figure>
+
+        <figure class="g-item g-video" data-reveal data-parallax="0.05">
+          <video muted loop playsinline preload="metadata" poster="assets/natklub.jpeg" data-autoplay>
+            <source src="assets/dj-natklub.mp4" type="video/mp4">
+          </video>
+          <figcaption><span>Natklub</span></figcaption>
+        </figure>
+
+        <figure class="g-item" data-reveal data-parallax="0.09">
+          <img src="assets/fest-indendoers.jpeg" alt="Indendørs fest med lyseffekt, røg og LED-dansegulv" loading="lazy">
+          <figcaption><span>Indendørs fest</span></figcaption>
+        </figure>
+
+        <figure class="g-item g-video" data-reveal data-parallax="0.07">
+          <video muted loop playsinline preload="metadata" poster="assets/strandbar.jpeg" data-autoplay>
+            <source src="assets/privatfest-dansegulv.mp4" type="video/mp4">
+          </video>
+          <figcaption><span>Privatfest</span></figcaption>
+        </figure>
+
+        <figure class="g-item g-wide" data-reveal data-parallax="0.06">
+          <img src="assets/natklub.jpeg" alt="DJ bag pulten på natklub i rødt lys" loading="lazy">
+          <figcaption><span>Bag pulten</span></figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ARRANGEMENTER ============ -->
+  <section class="section events" id="events">
+    <div class="wrap">
+      <div class="events-inner" data-reveal>
+        <div class="events-head">
+          <p class="eyebrow"><i class="pip"></i>ARRANGEMENTER</p>
+          <h2 class="h2">Til både private<br>og <em>erhverv</em></h2>
+        </div>
+
+        <div class="chips">
+          <span class="chip">Fødselsdage</span>
+          <span class="chip">Bryllupper</span>
+          <span class="chip">Firmafester</span>
+          <span class="chip">Julefrokoster</span>
+          <span class="chip">Studentergilder</span>
+          <span class="chip">Jubilæer</span>
+          <span class="chip chip-alt">Festivaler <em>· kun DJ</em></span>
+          <span class="chip chip-alt">Natklubber <em>· kun DJ</em></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ HVORFOR ============ -->
+  <section class="section why">
+    <div class="wrap">
+      <div class="why-head" data-reveal>
+        <p class="eyebrow"><i class="pip"></i>HVORFOR VÆLGE OS?</p>
+        <h2 class="h2">Et professionelt udtryk<br>fra <em>start til slut</em></h2>
+      </div>
+
+      <div class="why-grid">
+        <div class="why-card" data-reveal><strong>01</strong><p>Fleksible løsninger tilpasset jeres arrangement</p></div>
+        <div class="why-card" data-reveal><strong>02</strong><p>Professionelle DJs med blik for publikum</p></div>
+        <div class="why-card" data-reveal><strong>03</strong><p>Udstyr samlet i én løsning</p></div>
+        <div class="why-card" data-reveal><strong>04</strong><p>Direkte og personlig kontakt</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ KONTAKT / CTA ============ -->
+  <section class="section contact" id="kontakt">
+    <div class="contact-glow" aria-hidden="true"></div>
+
+    <div class="wrap contact-grid">
+      <div class="contact-copy copy-block" data-reveal>
+        <p class="eyebrow"><i class="pip"></i>KONTAKT</p>
+        <h2 class="h2">Lad os tale om jeres<br><em>næste arrangement</em></h2>
+        <p class="lead">
+          Kontakt Vigge Studios direkte på mail, telefon eller Instagram.
+          Fortæl gerne dato, sted, type af arrangement og cirka antal gæster.
+        </p>
+
+        <div class="contact-direct">
+          <a class="contact-line" href="mailto:viggestudiosprimary@gmail.com">
+            <span class="cl-label">Mail</span>
+            <span class="cl-value">viggestudiosprimary@gmail.com</span>
+          </a>
+          <a class="contact-line" href="tel:+4561383689">
+            <span class="cl-label">Telefon</span>
+            <span class="cl-value">61 38 36 89</span>
+          </a>
+          <a class="contact-line" href="https://instagram.com/viggestudios" target="_blank" rel="noopener noreferrer">
+            <span class="cl-label">Instagram</span>
+            <span class="cl-value">@viggestudios</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="contact-form-wrap" data-reveal>
+        <form class="contact-form" id="contact-form" novalidate>
+          <p class="form-title">Skriv til os</p>
+
+          <div class="field-row">
+            <label class="field">
+              <span>Navn</span>
+              <input type="text" name="navn" placeholder="Dit navn" autocomplete="name">
+            </label>
+            <label class="field">
+              <span>Telefon</span>
+              <input type="tel" name="telefon" placeholder="12 34 56 78" autocomplete="tel">
+            </label>
+          </div>
+
+          <label class="field">
+            <span>E-mail</span>
+            <input type="email" name="email" placeholder="din@mail.dk" autocomplete="email">
+          </label>
+
+          <div class="field-row">
+            <label class="field">
+              <span>Dato</span>
+              <input type="date" name="dato">
+            </label>
+            <label class="field">
+              <span>Antal gæster</span>
+              <input type="number" name="gaester" min="1" placeholder="ca. 80">
+            </label>
+          </div>
+
+          <label class="field">
+            <span>Type af arrangement</span>
+            <div class="select-wrap">
+              <select name="type">
+                <option value="">Vælg…</option>
+                <option>Fødselsdag</option>
+                <option>Bryllup</option>
+                <option>Firmafest</option>
+                <option>Julefrokost</option>
+                <option>Studentergilde</option>
+                <option>Jubilæum</option>
+                <option>Festival</option>
+                <option>Natklub</option>
+                <option>Andet</option>
+              </select>
+            </div>
+          </label>
+
+          <fieldset class="field pick">
+            <legend><span>Hvad skal vi levere?</span></legend>
+            <div class="pick-grid">
+              <label class="pick-item"><input type="checkbox" name="ydelse" value="DJ"><span>DJ</span></label>
+              <label class="pick-item"><input type="checkbox" name="ydelse" value="Lyd"><span>Lyd</span></label>
+              <label class="pick-item"><input type="checkbox" name="ydelse" value="Lys"><span>Lys</span></label>
+              <label class="pick-item"><input type="checkbox" name="ydelse" value="Røg"><span>Røg</span></label>
+            </div>
+          </fieldset>
+
+          <label class="field">
+            <span>Fortæl om festen</span>
+            <textarea name="besked" rows="4" placeholder="Sted, tidsrum og hvad I drømmer om…"></textarea>
+          </label>
+
+          <!-- spamfælde: skjult for mennesker, udfyldes kun af bots -->
+          <label class="hp" aria-hidden="true">
+            <span>Lad dette felt stå tomt</span>
+            <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off">
+          </label>
+
+          <button class="btn btn-solid btn-lg btn-block" type="submit"><span>Send forespørgsel</span></button>
+          <p class="form-error" id="form-error" role="alert" hidden></p>
+          <p class="form-foot">
+            Vi vender som regel tilbage inden for et døgn.<br>
+            Dine oplysninger bruges kun til at besvare din henvendelse.
+            <a href="persondatapolitik.html">Sådan behandler vi dem</a>
+          </p>
+
+          <div class="form-done" id="form-done" hidden>
+            <div class="form-done-ball"></div>
+            <p class="form-done-title">Tak for din besked</p>
+            <p class="form-done-text">Vi vender tilbage hurtigst muligt.</p>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ REEL — vandret gennemløb af alt materiale ============ -->
+  <section class="reel" id="reel" aria-label="Billeder og video fra arrangementer">
+    <div class="reel-sticky">
+      <div class="reel-head">
+        <p class="eyebrow"><i class="pip"></i>ALT FRA DANSEGULVET</p>
+        <h2 class="reel-title">Se det <em>hele</em></h2>
+      </div>
+
+      <div class="reel-viewport">
+        <div class="reel-track" id="reel-track">
+
+          <figure class="reel-item reel-video">
+            <video muted loop playsinline preload="none" poster="assets/strandbar.jpeg" data-autoplay>
+              <source src="assets/hero-studenterfest.mp4" type="video/mp4">
+            </video>
+            <figcaption><b>Studenterfest</b><span>Fyldt dansegulv</span></figcaption>
+          </figure>
+
+          <figure class="reel-item">
+            <img src="assets/strandbar.jpeg" alt="Fyldt dansegulv udendørs med lyskæder over gæsterne" loading="lazy">
+            <figcaption><b>Strandbar</b><span>Udendørs arrangement</span></figcaption>
+          </figure>
+
+          <figure class="reel-item reel-video">
+            <video muted loop playsinline preload="none" poster="assets/fest-indendoers.jpeg" data-autoplay>
+              <source src="assets/dansegulv-klub.mp4" type="video/mp4">
+            </video>
+            <figcaption><b>Klub</b><span>Dansegulv</span></figcaption>
+          </figure>
+
+          <figure class="reel-item">
+            <img src="assets/dj-strand.jpeg" alt="DJ-setup med Pioneer-controller under åben strandpavillon" loading="lazy">
+            <figcaption><b>Opsætning</b><span>Før gæsterne kommer</span></figcaption>
+          </figure>
+
+          <figure class="reel-item reel-video">
+            <video muted loop playsinline preload="none" poster="assets/natklub.jpeg" data-autoplay>
+              <source src="assets/dj-natklub.mp4" type="video/mp4">
+            </video>
+            <figcaption><b>Natklub</b><span>Bag pulten</span></figcaption>
+          </figure>
+
+          <figure class="reel-item">
+            <img src="assets/event-have.jpeg" alt="DJ med højttalere på stativ til privat havearrangement" loading="lazy">
+            <figcaption><b>Havefest</b><span>Privat arrangement</span></figcaption>
+          </figure>
+
+          <figure class="reel-item reel-video">
+            <video muted loop playsinline preload="none" poster="assets/fest-indendoers.jpeg" data-autoplay>
+              <source src="assets/privatfest-dansegulv.mp4" type="video/mp4">
+            </video>
+            <figcaption><b>Privatfest</b><span>Dansegulv</span></figcaption>
+          </figure>
+
+          <figure class="reel-item">
+            <img src="assets/fest-indendoers.jpeg" alt="Indendørs fest med lyseffekt, røg og LED-dansegulv" loading="lazy">
+            <figcaption><b>Indendørs</b><span>Lys og røg</span></figcaption>
+          </figure>
+
+          <figure class="reel-item">
+            <img src="assets/natklub.jpeg" alt="DJ bag pulten på natklub i rødt lys" loading="lazy">
+            <figcaption><b>Natklub</b><span>Rødt lys</span></figcaption>
+          </figure>
+
+          <!-- Instagram-kort som afslutning på rullen -->
+          <a class="reel-item reel-ig" href="https://instagram.com/viggestudios" target="_blank" rel="noopener noreferrer">
+            <span class="reel-ig-icon">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="2.5" width="19" height="19" rx="5.5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.6" cy="6.4" r="1.3" class="ig-dot"/></svg>
+            </span>
+            <b>Se mere på Instagram</b>
+            <span>@viggestudios</span>
+          </a>
+
+        </div>
+      </div>
+
+      <div class="reel-progress" aria-hidden="true"><i id="reel-bar"></i></div>
+      <p class="reel-hint" aria-hidden="true">Scroll</p>
+    </div>
+  </section>
+
+  <!-- ============ INSTAGRAM BAND ============ -->
+  <section class="ig-band">
+    <a class="ig-band-inner" href="https://instagram.com/viggestudios" target="_blank" rel="noopener noreferrer">
+      <span class="ig-band-mark">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="2.5" width="19" height="19" rx="5.5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.6" cy="6.4" r="1.3" class="ig-dot"/></svg>
+      </span>
+      <span class="ig-band-text">
+        <b>Følg med på Instagram</b>
+        <em>@viggestudios</em>
+      </span>
+      <span class="ig-band-cta">Åbn profil →</span>
+    </a>
+  </section>
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="site-footer">
+  <div class="wrap footer-grid">
+    <a class="footer-brand" href="#top">
+      <span class="brand-mark"><img src="assets/vigge-studios-logo.png" alt=""></span>
+      <span>vigge studios</span>
     </a>
 
-    <button class="menu-button" type="button" aria-expanded="false" aria-label="Åbn menu">
-      Menu
-    </button>
-
-    <nav class="navigation" aria-label="Hovedmenu">
+    <nav class="footer-nav" aria-label="Footermenu">
       <a href="#om">Om os</a>
       <a href="#services">Services</a>
       <a href="#stemning">Stemning</a>
       <a href="#events">Arrangementer</a>
-      <a class="nav-contact" href="#kontakt">Kontakt</a>
+      <a href="#kontakt">Kontakt</a>
     </nav>
-  </header>
 
-  <main id="top">
-    <section class="hero">
-      <div class="hero-orb hero-orb-one"></div>
-      <div class="hero-orb hero-orb-two"></div>
+    <div class="footer-contact">
+      <a href="mailto:viggestudiosprimary@gmail.com">viggestudiosprimary@gmail.com</a>
+      <a href="tel:+4561383689">61 38 36 89</a>
+      <a href="https://instagram.com/viggestudios" target="_blank" rel="noopener noreferrer">@viggestudios</a>
+    </div>
+  </div>
 
-      <div class="hero-copy reveal">
-        <p class="eyebrow">DJ · LYD · LYS · EVENTS</p>
-        <h1>Vi skaber stemningen til <em>jeres næste event.</em></h1>
-        <p class="hero-text">
-          Professionelle DJs samt udlejning af lyd, lys og røgmaskiner til private
-          fester og erhvervsarrangementer.
-        </p>
-
-        <div class="hero-actions">
-          <a class="button button-primary" href="#services">Se vores services</a>
-          <a class="button button-secondary" href="#kontakt">Kontakt os</a>
-        </div>
-      </div>
-
-      <div class="hero-media reveal">
-        <video autoplay muted loop playsinline preload="metadata" aria-label="Stemning fra en studenterfest">
-          <source src="hero-studenterfest.mp4" type="video/mp4">
-        </video>
-        <div class="hero-badge">Rigtige fester · Rigtig stemning</div>
-      </div>
-    </section>
-
-    <section class="intro-strip" aria-label="Typer af arrangementer">
-      <span>Fødselsdage</span>
-      <span>Bryllupper</span>
-      <span>Firmafester</span>
-      <span>Julefrokoster</span>
-      <span>Studentergilder</span>
-      <span>Jubilæer</span>
-    </section>
-
-    <section class="section about" id="om">
-      <div class="about-grid">
-        <div class="about-copy reveal">
-          <p class="eyebrow">OM VIGGE STUDIOS</p>
-          <h2>En samlet løsning til en vellykket fest</h2>
-          <p>
-            Vigge Studios hjælper private og virksomheder med at skabe den rette
-            stemning. Vi kombinerer professionelle DJs med lyd, lys og røgmaskiner,
-            så festen både lyder og ser godt ud.
-          </p>
-          <p>
-            Hver løsning tilpasses arrangementets størrelse, gæster og ønsker.
-            Målet er enkelt: en professionel oplevelse og et dansegulv, som gæsterne
-            har lyst til at blive på.
-          </p>
-        </div>
-
-        <figure class="about-image reveal">
-          <img src="dj-strand.jpeg" alt="Professionelt DJ-setup ved stranden" loading="lazy">
-        </figure>
-      </div>
-    </section>
-
-    <section class="section services" id="services">
-      <div class="section-heading reveal">
-        <p class="eyebrow">VORES SERVICES</p>
-        <h2>Det kan Vigge Studios levere</h2>
-        <p>I kan booke en DJ, leje udstyr eller få en samlet løsning.</p>
-      </div>
-
-      <div class="service-grid">
-        <article class="service-card reveal">
-          <span class="service-number">01</span>
-          <h3>Professionelle DJs</h3>
-          <p>Musikken tilpasses gæsterne, stedet og stemningen på dansegulvet.</p>
-        </article>
-
-        <article class="service-card reveal">
-          <span class="service-number">02</span>
-          <h3>Lydudstyr</h3>
-          <p>Lydanlæg til private fester og erhvervsarrangementer i forskellige størrelser.</p>
-        </article>
-
-        <article class="service-card reveal">
-          <span class="service-number">03</span>
-          <h3>Lysudstyr</h3>
-          <p>Dansegulvslys og stemningsbelysning, som giver et gennemført udtryk.</p>
-        </article>
-
-        <article class="service-card reveal">
-          <span class="service-number">04</span>
-          <h3>Røgmaskiner</h3>
-          <p>Effekter, der gør lyset tydeligere og skaber mere liv omkring dansegulvet.</p>
-        </article>
-      </div>
-
-      <p class="service-note reveal">
-        Til festivaler og natklubber leverer Vigge Studios professionelle DJs.
-        Lyd-, lys- og røgløsninger tilbydes til private arrangementer og firmaevents.
-      </p>
-    </section>
-
-    <section class="section atmosphere" id="stemning">
-      <div class="section-heading reveal">
-        <p class="eyebrow">OPLEV STEMNINGEN</p>
-        <h2>Fra opsætning til fyldt dansegulv</h2>
-        <p>Alt indhold her er fra arrangementer, hvor Vigge Studios har været med.</p>
-      </div>
-
-      <div class="media-grid">
-        <figure class="media-wide reveal">
-          <img src="strandbar.jpeg" alt="Udendørs arrangement med DJ og gæster" loading="lazy">
-        </figure>
-
-        <figure class="media-tall video-card reveal">
-          <video muted loop playsinline preload="metadata">
-            <source src="dansegulv-klub.mp4" type="video/mp4">
-          </video>
-          <button class="video-toggle" type="button">Afspil</button>
-        </figure>
-
-        <figure class="reveal">
-          <img src="event-have.jpeg" alt="DJ og lydudstyr til privat havearrangement" loading="lazy">
-        </figure>
-
-        <figure class="video-card reveal">
-          <video muted loop playsinline preload="metadata">
-            <source src="dj-natklub.mp4" type="video/mp4">
-          </video>
-          <button class="video-toggle" type="button">Afspil</button>
-        </figure>
-
-        <figure class="reveal">
-          <img src="fest-indendoers.jpeg" alt="Lys og musik til indendørs fest" loading="lazy">
-        </figure>
-
-        <figure class="video-card reveal">
-          <video muted loop playsinline preload="metadata">
-            <source src="privatfest-dansegulv.mp4" type="video/mp4">
-          </video>
-          <button class="video-toggle" type="button">Afspil</button>
-        </figure>
-
-        <figure class="media-wide reveal">
-          <img src="natklub.jpeg" alt="DJ spiller på natklub" loading="lazy">
-        </figure>
-      </div>
-    </section>
-
-    <section class="section compact-events" id="events">
-      <div class="compact-events-inner reveal">
-        <div>
-          <p class="eyebrow">ARRANGEMENTER</p>
-          <h2>Til både private og erhverv</h2>
-        </div>
-
-        <div class="event-chips">
-          <span>Fødselsdage</span>
-          <span>Bryllupper</span>
-          <span>Firmafester</span>
-          <span>Julefrokoster</span>
-          <span>Studentergilder</span>
-          <span>Jubilæer</span>
-          <span>Festivaler · kun DJ</span>
-          <span>Natklubber · kun DJ</span>
-        </div>
-      </div>
-    </section>
-
-    <section class="section why-us">
-      <div class="why-card reveal">
-        <div>
-          <p class="eyebrow">HVORFOR VÆLGE OS?</p>
-          <h2>Et professionelt udtryk fra start til slut</h2>
-        </div>
-
-        <div class="benefit-list">
-          <div><strong>01</strong><span>Fleksible løsninger tilpasset jeres arrangement</span></div>
-          <div><strong>02</strong><span>Professionelle DJs med blik for publikum</span></div>
-          <div><strong>03</strong><span>Udstyr samlet i én løsning</span></div>
-          <div><strong>04</strong><span>Direkte og personlig kontakt</span></div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section contact" id="kontakt">
-      <div class="contact-heading reveal">
-        <p class="eyebrow">KONTAKT</p>
-        <h2>Lad os tale om jeres næste arrangement</h2>
-        <p>
-          Kontakt Vigge Studios direkte på mail, telefon eller Instagram.
-          Fortæl gerne dato, sted, type af arrangement og cirka antal gæster.
-        </p>
-      </div>
-
-      <div class="contact-grid">
-        <a class="contact-card reveal" href="mailto:viggestudiosprimary@gmail.com">
-          <span>MAIL</span>
-          <strong>viggestudiosprimary@gmail.com</strong>
-          <i>Send en mail →</i>
-        </a>
-
-        <a class="contact-card reveal" href="tel:+4561383689">
-          <span>TELEFON</span>
-          <strong>61 38 36 89</strong>
-          <i>Ring til os →</i>
-        </a>
-
-        <a class="contact-card reveal" href="https://instagram.com/viggestudios" target="_blank" rel="noopener noreferrer">
-          <span>INSTAGRAM</span>
-          <strong>@viggestudios</strong>
-          <i>Se Instagram →</i>
-        </a>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <a class="footer-brand" href="#top">
-      <img src="vigge-studios-logo.png" alt="">
-      <strong>Vigge Studios</strong>
-    </a>
+  <div class="wrap footer-bottom">
     <p>© <span id="year"></span> Vigge Studios. Alle rettigheder forbeholdes.</p>
-  </footer>
+    <a class="studio-credit" href="https://klinikwebstudio.dk" target="_blank" rel="noopener noreferrer">Få en hjemmeside som dette</a>
+  </div>
+</footer>
+
+<!-- =========================================================
+     BOOKING-OPLEVELSE
+     Åbner over siden når man trykker book. Ét spørgsmål pr.
+     skærm, scroll-drevet, med et spring-over til formularen
+     for dem der bare vil hurtigt igennem.
+     ========================================================= -->
+<div class="book" id="book" role="dialog" aria-modal="true" aria-label="Book Vigge Studios" hidden>
+
+  <div class="book-fx" aria-hidden="true">
+    <div class="book-beams"><i></i><i></i><i></i><i></i><i></i></div>
+    <div class="book-ball"><span class="book-ball-body"></span><span class="book-ball-spec"></span></div>
+    <canvas class="book-canvas" id="book-canvas"></canvas>
+    <div class="book-vignette"></div>
+  </div>
+
+  <div class="book-chrome">
+    <a class="book-brand" href="#top">
+      <span class="brand-mark"><img src="assets/vigge-studios-logo.png" alt=""></span>
+      <span>vigge studios</span>
+    </a>
+    <div class="book-rail" aria-hidden="true"><i id="book-rail-fill"></i></div>
+    <button class="book-close" id="book-close" type="button" aria-label="Luk booking">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+  </div>
+
+  <div class="book-scroll" id="book-scroll">
+
+    <!-- 0 · intro -->
+    <section class="book-step book-intro" data-step="0">
+      <div class="book-inner">
+        <p class="eyebrow"><i class="pip"></i>BOOKING</p>
+        <h2 class="book-h">Lad os planlægge<br><em>jeres fest</em></h2>
+        <p class="book-lead">Fire hurtige spørgsmål. Så ved vi nok til at vende tilbage med et konkret bud.</p>
+        <button class="btn btn-solid btn-lg book-next" type="button" data-goto="1"><span>Kom i gang</span></button>
+        <button class="book-skip" type="button" id="book-skip">Spring over — vis formularen</button>
+      </div>
+      <span class="book-scrollhint" aria-hidden="true">Scroll</span>
+    </section>
+
+    <!-- 1 · type -->
+    <section class="book-step" data-step="1">
+      <div class="book-inner">
+        <p class="book-num">01 / 04</p>
+        <h2 class="book-h">Hvad skal vi<br><em>spille til?</em></h2>
+        <div class="book-opts" data-field="type" data-single>
+          <button class="book-opt" type="button" data-value="Fødselsdag">Fødselsdag</button>
+          <button class="book-opt" type="button" data-value="Bryllup">Bryllup</button>
+          <button class="book-opt" type="button" data-value="Firmafest">Firmafest</button>
+          <button class="book-opt" type="button" data-value="Julefrokost">Julefrokost</button>
+          <button class="book-opt" type="button" data-value="Studentergilde">Studentergilde</button>
+          <button class="book-opt" type="button" data-value="Jubilæum">Jubilæum</button>
+          <button class="book-opt" type="button" data-value="Festival">Festival</button>
+          <button class="book-opt" type="button" data-value="Natklub">Natklub</button>
+          <button class="book-opt" type="button" data-value="Andet">Andet</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2 · ydelser, med de rigtige 3D-props -->
+    <section class="book-step" data-step="2">
+      <div class="book-inner book-inner-wide">
+        <p class="book-num">02 / 04</p>
+        <h2 class="book-h">Hvad skal vi <em>levere?</em></h2>
+        <p class="book-sub">Vælg gerne flere.</p>
+
+        <div class="book-props" data-field="ydelser">
+          <button class="book-prop" type="button" data-value="DJ">
+            <span class="book-prop-stage">
+              <span class="prop prop-turntable bp-turntable">
+                <span class="tt-deck">
+                  <span class="tt-platter"><span class="tt-vinyl"><i></i><b></b></span></span>
+                  <span class="tt-arm"><span class="tt-arm-head"></span></span>
+                </span>
+              </span>
+            </span>
+            <b>DJ</b><em>Musik tilpasset gæsterne</em>
+          </button>
+
+          <button class="book-prop" type="button" data-value="Lyd">
+            <span class="book-prop-stage">
+              <span class="prop prop-speaker bp-speaker">
+                <span class="sp-box">
+                  <span class="sp-face">
+                    <span class="sp-tweeter"><i></i></span>
+                    <span class="sp-woofer"><i></i><b></b></span>
+                  </span>
+                  <span class="sp-side"></span><span class="sp-top"></span>
+                </span>
+              </span>
+            </span>
+            <b>Lyd</b><em>Anlæg i flere størrelser</em>
+          </button>
+
+          <button class="book-prop" type="button" data-value="Lys">
+            <span class="book-prop-stage">
+              <span class="prop prop-light bp-light">
+                <span class="lt-truss"><i></i><i></i><i></i></span>
+                <span class="lt-rig">
+                  <span class="lt-yoke"></span>
+                  <span class="lt-head"><span class="lt-lens"></span></span>
+                  <span class="lt-beam"></span>
+                </span>
+                <span class="lt-floor"></span>
+              </span>
+            </span>
+            <b>Lys</b><em>Dansegulv og stemning</em>
+          </button>
+
+          <button class="book-prop" type="button" data-value="Røg">
+            <span class="book-prop-stage">
+              <span class="prop prop-fog bp-fog">
+                <span class="fog-puffs"><i></i><i></i><i></i></span>
+                <span class="fog-box">
+                  <span class="fog-face"><span class="fog-nozzle"></span><span class="fog-led"></span></span>
+                  <span class="fog-side"></span><span class="fog-top"></span>
+                </span>
+              </span>
+            </span>
+            <b>Røg</b><em>Gør lyset tydeligere</em>
+          </button>
+        </div>
+
+        <button class="btn btn-ghost book-next" type="button" data-goto="3"><span>Videre</span></button>
+      </div>
+    </section>
+
+    <!-- 3 · dato og gæster -->
+    <section class="book-step" data-step="3">
+      <div class="book-inner">
+        <p class="book-num">03 / 04</p>
+        <h2 class="book-h">Hvornår — og<br><em>hvor mange?</em></h2>
+
+        <div class="book-when">
+          <label class="book-field">
+            <span>Dato</span>
+            <input type="date" id="bk-dato">
+          </label>
+
+          <div class="book-field">
+            <span>Antal gæster</span>
+            <div class="book-guests">
+              <output class="book-guests-num" id="bk-gaester-out">80</output>
+              <input type="range" id="bk-gaester" min="10" max="400" step="5" value="80" aria-label="Antal gæster">
+              <div class="book-guests-scale"><i>10</i><i>400+</i></div>
+            </div>
+          </div>
+        </div>
+
+        <button class="btn btn-ghost book-next" type="button" data-goto="4"><span>Videre</span></button>
+      </div>
+    </section>
+
+    <!-- 4 · kontakt -->
+    <section class="book-step" data-step="4">
+      <div class="book-inner">
+        <p class="book-num">04 / 04</p>
+        <h2 class="book-h">Hvor kan vi<br><em>fange jer?</em></h2>
+
+        <div class="book-contact">
+          <label class="book-field"><span>Navn</span><input type="text" id="bk-navn" placeholder="Dit navn" autocomplete="name"></label>
+          <label class="book-field"><span>Telefon</span><input type="tel" id="bk-tlf" placeholder="12 34 56 78" autocomplete="tel"></label>
+          <label class="book-field"><span>E-mail</span><input type="email" id="bk-mail" placeholder="din@mail.dk" autocomplete="email"></label>
+          <label class="book-field"><span>Sted eller bemærkning</span><input type="text" id="bk-sted" placeholder="Adresse, lokale, ønsker…"></label>
+        </div>
+
+        <button class="btn btn-solid btn-lg book-next" type="button" data-goto="5"><span>Se opsummering</span></button>
+      </div>
+    </section>
+
+    <!-- 5 · opsummering -->
+    <section class="book-step book-final" data-step="5">
+      <div class="book-inner">
+        <p class="eyebrow"><i class="pip"></i>NÆSTEN FÆRDIG</p>
+        <h2 class="book-h">Ser det<br><em>rigtigt ud?</em></h2>
+
+        <dl class="book-summary" id="book-summary"></dl>
+
+        <button class="btn btn-solid btn-lg" type="button" id="book-send"><span>Send forespørgsel</span></button>
+        <p class="form-error" id="book-error" role="alert" hidden></p>
+        <p class="book-note">
+          Vi vender som regel tilbage inden for et døgn.<br>
+          Dine oplysninger bruges kun til at besvare din henvendelse.
+          <a href="persondatapolitik.html" target="_blank" rel="noopener">Sådan behandler vi dem</a>
+        </p>
+      </div>
+
+      <div class="book-done" id="book-done" hidden>
+        <div class="book-done-ball"></div>
+        <h3>Tak — vi er på sagen</h3>
+        <p>Vi vender tilbage hurtigst muligt med et konkret bud.</p>
+        <div class="book-done-links">
+          <a href="tel:+4561383689">61 38 36 89</a>
+          <a href="https://instagram.com/viggestudios" target="_blank" rel="noopener noreferrer">@viggestudios</a>
+        </div>
+        <button class="btn btn-ghost" type="button" id="book-done-close"><span>Tilbage til siden</span></button>
+      </div>
+    </section>
+
+  </div>
+</div>
+
+<!-- ============ FAST BOOK-KNAP ============ -->
+<a class="sticky-cta" href="#kontakt" id="sticky-cta">
+  <span class="sticky-cta-pulse" aria-hidden="true"></span>
+  <span class="sticky-cta-text">Book nu</span>
+  <span class="sticky-cta-arrow" aria-hidden="true">→</span>
+</a>
+
+<script src="script.js" defer></script>
 </body>
 </html>
