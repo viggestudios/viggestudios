@@ -619,13 +619,20 @@
       return ud;
     }
 
+    /* Kvitteringen er et overlay hen over HELE formularen, og teksten
+       sidder centreret i midten af den. Formularen er omkring 1400px
+       høj på mobil, og kunden står nederst ved Send-knappen når der
+       trykkes — så uden dette scroll havner beskeden knap 700px over
+       skærmkanten, og kunden ser ingen kvittering overhovedet.
+       Målt på iPhone 13: y = -692px i et 664px højt viewport. */
     function visKvittering() {
       done.hidden = false;
+      done.scrollIntoView({ block: "center", behavior: reduced ? "auto" : "smooth" });
       requestAnimationFrame(function () { done.classList.add("is-in"); });
       setTimeout(function () {
         done.classList.remove("is-in");
         setTimeout(function () { done.hidden = true; form.reset(); }, 500);
-      }, 3800);
+      }, 6000);
     }
 
     form.addEventListener("submit", function (e) {
