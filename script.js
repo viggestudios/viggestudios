@@ -635,12 +635,62 @@
       }, 6000);
     }
 
+    /* Uden validering kunne en HELT tom formular sendes afsted, og
+       kunden fik alligevel "Tak for din besked" mens Mads modtog en mail
+       uden navn, mail eller telefon — altså en tabt booking han ikke
+       engang kunne svare på. Det er nøjagtig den falske kvittering som
+       keyMangler() ellers beskytter imod. Minimumskravet er et navn og
+       mindst én måde at vende tilbage på. */
+    function manglendeFelter(felter) {
+      var mangler = [];
+      var mail = (felter.email || "").trim();
+      var tlf = (felter.telefon || "").trim();
+      if (!(felter.navn || "").trim()) mangler.push("navn");
+      if (!mail && !tlf) mangler.push("kontakt");
+      else if (mail && !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(mail)) mangler.push("mail");
+      return mangler;
+    }
+
+    var FEJLTEKST = {
+      navn: "Skriv dit navn, så vi ved hvem vi svarer.",
+      kontakt: "Skriv enten din mail eller dit telefonnummer, så vi kan vende tilbage.",
+      mail: "Mailadressen ser ikke helt rigtig ud — vil du tjekke den?"
+    };
+
+    function visManglerFejl(mangler) {
+      var først = mangler[0];
+      if (fejl) {
+        fejl.textContent = FEJLTEKST[først];
+        fejl.hidden = false;
+      }
+      $$("[name]", form).forEach(function (el) { el.classList.remove("is-invalid"); });
+      var felt = $(først === "navn" ? '[name="navn"]' : '[name="email"]', form);
+      if (!felt) return;
+      felt.classList.add("is-invalid");
+      felt.setAttribute("aria-invalid", "true");
+      felt.scrollIntoView({ block: "center", behavior: reduced ? "auto" : "smooth" });
+      setTimeout(function () { try { felt.focus({ preventScroll: true }); } catch (e) {} }, reduced ? 0 : 420);
+    }
+
+    /* Fejlmarkeringen fjernes så snart kunden retter, i stedet for at
+       blive hængende som en anklage mens hun skriver. */
+    form.addEventListener("input", function (e) {
+      if (e.target.classList && e.target.classList.contains("is-invalid")) {
+        e.target.classList.remove("is-invalid");
+        e.target.removeAttribute("aria-invalid");
+        if (fejl) fejl.hidden = true;
+      }
+    });
+
     form.addEventListener("submit", function (e) {
       e.preventDefault();
       if (sender) return;
 
       var felter = saml();
       if (fejl) fejl.hidden = true;
+
+      var mangler = manglendeFelter(felter);
+      if (mangler.length) { visManglerFejl(mangler); return; }
 
       // mailen skal kunne sorteres i indbakken uden at åbnes
       var emne = "Forespørgsel" +
