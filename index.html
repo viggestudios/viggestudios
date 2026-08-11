@@ -49,6 +49,12 @@
   "sameAs": ["https://www.instagram.com/viggestudios/"],
   "areaServed": { "@type": "Country", "name": "Danmark" },
   "knowsLanguage": "da",
+  "founder": {
+    "@type": "Person",
+    "name": "Mads Vigge Sølling Ørnbo",
+    "jobTitle": "DJ og indehaver",
+    "description": "Har spillet som DJ på flere prominente danske natklubber og specialiserede sig derefter som DJ til private arrangementer."
+  },
   "contactPoint": {
     "@type": "ContactPoint",
     "contactType": "Booking og forespørgsler",
@@ -64,7 +70,9 @@
     { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Lysudstyr",
       "description": "Dansegulvslys og stemningsbelysning, som giver et gennemført udtryk." } },
     { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Røgmaskiner",
-      "description": "Effekter, der gør lyset tydeligere og skaber mere liv omkring dansegulvet." } }
+      "description": "Effekter, der gør lyset tydeligere og skaber mere liv omkring dansegulvet." } },
+    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Bartender",
+      "description": "Bartender tilbydes, og prisen inkluderes i overslaget. Valg af drinks og nærmere detaljer tages med den bartender, som er til stede på dagen." } }
   ]
 }
 </script>
@@ -198,6 +206,18 @@
           har lyst til at blive på.
         </p>
 
+        <p class="body">
+          Vigge Studios er et eventfirma ejet af DJ Mads Vigge Sølling Ørnbo.
+          Mads har spillet som DJ på flere prominente danske natklubber og
+          specialiserede sig derefter som DJ til private arrangementer, hvilket
+          drev ham til at starte virksomheden.
+        </p>
+
+        <p class="body">
+          Vigge Studios kombinerer en professionel og luksuriøs oplevelse med
+          personlig kontakt og tilbyder lyd, lys, røg, DJs og bartender&shy;muligheder.
+        </p>
+
         <ul class="tick-list">
           <li><span>Private fester</span></li>
           <li><span>Erhvervsarrangementer</span></li>
@@ -322,6 +342,28 @@
           </div>
         </article>
 
+        <!-- 05 Bartender -->
+        <article class="service" data-reveal data-prop="bar">
+          <div class="service-copy">
+            <span class="service-no">05</span>
+            <h3>Bartender</h3>
+            <p>Bartender tilbydes, og prisen inkluderes i overslaget. Valg af drinks og
+              nærmere detaljer tages med den bartender, som er til stede på dagen, så
+              planlægningen bliver direkte og personlig.</p>
+          </div>
+          <div class="service-prop">
+            <div class="prop prop-bar">
+              <div class="bar-shadow"></div>
+              <div class="bar-glass">
+                <div class="bar-bowl"><span class="bar-liquid"></span></div>
+                <div class="bar-cherry"></div>
+                <div class="bar-stem"></div>
+                <div class="bar-foot"></div>
+              </div>
+            </div>
+          </div>
+        </article>
+
       </div>
 
       <p class="service-note" data-reveal>
@@ -436,6 +478,11 @@
         <p class="eyebrow"><i class="pip"></i>KONTAKT</p>
         <h2 class="h2">Lad os tale om jeres<br><em>næste arrangement</em></h2>
         <p class="lead">
+          Ved ønske og basal information om din begivenhed kan du modtage et
+          uforpligtende tilbud, som inkluderer alt det, det ønskede resultat
+          skal indeholde.
+        </p>
+        <p class="lead">
           Kontakt Vigge Studios direkte på mail, telefon eller Instagram.
           Fortæl gerne dato, sted, type af arrangement og cirka antal gæster.
         </p>
@@ -512,6 +559,7 @@
               <label class="pick-item"><input type="checkbox" name="ydelse" value="Lyd"><span>Lyd</span></label>
               <label class="pick-item"><input type="checkbox" name="ydelse" value="Lys"><span>Lys</span></label>
               <label class="pick-item"><input type="checkbox" name="ydelse" value="Røg"><span>Røg</span></label>
+              <label class="pick-item"><input type="checkbox" name="ydelse" value="Bartender"><span>Bartender</span></label>
             </div>
           </fieldset>
 
@@ -789,6 +837,21 @@
               </span>
             </span>
             <b>Røg</b><em>Gør lyset tydeligere</em>
+          </button>
+
+          <button class="book-prop" type="button" data-value="Bartender">
+            <span class="book-prop-stage">
+              <span class="prop prop-bar bp-bar">
+                <span class="bar-shadow"></span>
+                <span class="bar-glass">
+                  <span class="bar-bowl"><i class="bar-liquid"></i></span>
+                  <span class="bar-cherry"></span>
+                  <span class="bar-stem"></span>
+                  <span class="bar-foot"></span>
+                </span>
+              </span>
+            </span>
+            <b>Bartender</b><em>Prisen er med i overslaget</em>
           </button>
         </div>
 

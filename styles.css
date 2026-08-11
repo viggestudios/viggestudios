@@ -900,6 +900,49 @@ body.loaded .hero-meta { opacity: 1; }
 .fog-grip { position: absolute; right: 14px; bottom: 12px; width: 46px; height: 6px; border-radius: 4px; background: rgba(252, 198, 98, 0.18); transform: translateZ(21px); }
 .fog-shadow { position: absolute; left: 40px; bottom: 24px; width: 130px; height: 16px; border-radius: 50%; background: rgba(77, 38, 13, 0.34); filter: blur(10px); }
 
+/* ---- prop: bartender ---- */
+.prop-bar { width: 200px; height: 200px; transform-style: preserve-3d; }
+/* De øvrige props er mørke objekter på cremebaggrund. Et lyst,
+   translucent glas forsvandt i baggrunden, så glasset tegnes som mørk
+   silhuet med lysende væske indeni — samme kontrastsprog som resten. */
+.bar-glass {
+  position: absolute; left: 50%; bottom: 34px; width: 150px; height: 150px;
+  transform: translateX(-50%) rotateX(10deg) rotateY(-14deg);
+  transform-style: preserve-3d; transition: transform 0.9s var(--ease);
+}
+.service:hover .prop-bar .bar-glass { transform: translateX(-50%) rotateX(7deg) rotateY(-6deg) translateZ(16px); }
+.bar-bowl {
+  position: absolute; top: 0; left: 0; width: 150px; height: 88px;
+  clip-path: polygon(0 0, 100% 0, 52.5% 100%, 47.5% 100%);
+  background: linear-gradient(165deg, #3A1B08, #1A0A03);
+}
+.bar-liquid {
+  position: absolute; top: 5px; left: 5px; width: 140px; height: 66px;
+  clip-path: polygon(0 0, 100% 0, 53% 100%, 47% 100%);
+  background: linear-gradient(165deg, var(--yellow-lt), var(--orange) 72%, var(--orange-dp));
+  box-shadow: 0 0 26px rgba(252, 198, 98, 0.35);
+}
+.bar-cherry {
+  position: absolute; top: 16px; left: 96px; width: 18px; height: 18px; border-radius: 50%;
+  background: radial-gradient(circle at 34% 30%, #FFF6D8, var(--orange) 58%, #8A5A18);
+  box-shadow: 0 0 16px rgba(252, 100, 0, 0.5);
+}
+.bar-stem {
+  position: absolute; top: 86px; left: 50%; width: 9px; height: 48px; transform: translateX(-50%);
+  background: linear-gradient(90deg, #1A0A03, #5E2E12 45%, #1A0A03);
+}
+.bar-foot {
+  position: absolute; top: 128px; left: 50%; width: 76px; height: 14px; transform: translateX(-50%);
+  border-radius: 50%;
+  background: linear-gradient(180deg, #5E2E12, #1A0A03);
+  box-shadow: 0 0 0 1px rgba(252, 198, 98, 0.16);
+}
+.bar-shadow {
+  position: absolute; left: 50%; bottom: 30px; width: 148px; height: 18px;
+  transform: translateX(-50%); border-radius: 50%;
+  background: rgba(77, 38, 13, 0.34); filter: blur(10px);
+}
+
 .fog-puffs { position: absolute; left: 0; bottom: 44px; width: 120px; height: 130px; pointer-events: none; }
 .fog-puffs i {
   position: absolute; left: 10px; bottom: 0;
@@ -1581,7 +1624,10 @@ body.loaded .hero-meta { opacity: 1; }
 .book-opt:focus-visible { outline: 2px solid var(--yellow); outline-offset: 3px; }
 
 /* --- ydelseskort med 3D-props --- */
-.book-props { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-bottom: 30px; }
+/* auto-fit i stedet for et fast antal kolonner: ydelseslisten er vokset
+   fra 4 til 5, og et hårdkodet repeat(4) efterlod den sidste alene på
+   en halvtom række. */
+.book-props { display: grid; grid-template-columns: repeat(auto-fit, minmax(136px, 1fr)); gap: 14px; margin-bottom: 30px; }
 .book-prop {
   position: relative; cursor: pointer; overflow: hidden;
   display: grid; justify-items: center; gap: 4px;
@@ -1649,6 +1695,14 @@ body.loaded .hero-meta { opacity: 1; }
 .bp-fog .fog-top { height: 28px; transform: rotateX(90deg) translateZ(20px); }
 .bp-fog .fog-puffs { bottom: 30px; width: 86px; height: 84px; }
 .bp-fog .fog-puffs i { width: 36px; height: 36px; }
+.bp-bar { width: 130px; height: 112px; }
+.bp-bar .bar-glass { bottom: 14px; width: 92px; height: 92px; transform: translateX(-50%) rotateX(8deg) rotateY(-12deg); }
+.bp-bar .bar-bowl { width: 92px; height: 54px; }
+.bp-bar .bar-liquid { top: 3px; left: 3px; width: 86px; height: 41px; }
+.bp-bar .bar-cherry { top: 10px; left: 59px; width: 12px; height: 12px; }
+.bp-bar .bar-stem { top: 53px; width: 6px; height: 29px; }
+.bp-bar .bar-foot { top: 78px; width: 48px; height: 10px; }
+.bp-bar .bar-shadow { bottom: 6px; width: 98px; height: 13px; }
 
 /* --- felter --- */
 .book-when, .book-contact { display: grid; gap: 20px; margin-bottom: 30px; text-align: left; }
@@ -1768,6 +1822,9 @@ body.loaded .hero-meta { opacity: 1; }
 
 @media (max-width: 900px) {
   .book-props { grid-template-columns: repeat(2, 1fr); }
+  /* med 5 ydelser bliver den sidste alene i venstre kolonne; lad den
+     fylde bredden ud, så rækken ser bevidst ud i stedet for afhugget */
+  .book-props > :last-child:nth-child(odd) { grid-column: 1 / -1; }
   .book-contact { grid-template-columns: 1fr; }
   .book-rail { max-width: 150px; }
 }
