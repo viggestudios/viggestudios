@@ -7,6 +7,16 @@
 <meta name="theme-color" content="#1A0A03">
 <meta name="robots" content="noindex, follow">
 
+<script>
+  /* Samme https-omdirigering som på forsiden — se kommentaren der. */
+  (function () {
+    var v = location.hostname;
+    if (location.protocol === "http:" && v !== "localhost" && v !== "127.0.0.1") {
+      location.replace("https://" + location.host + location.pathname + location.search + location.hash);
+    }
+  })();
+</script>
+
 <title>Persondatapolitik | Vigge Studios</title>
 
 <link rel="icon" type="image/png" href="assets/vigge-studios-logo.png">
@@ -28,8 +38,9 @@
     <h2>Hvem er dataansvarlig</h2>
     <p>
       Vigge Studios<br>
-      <!-- UDFYLD: virksomhedens juridiske navn, adresse og CVR-nummer -->
-      <span class="legal-todo">[Adresse og CVR-nummer indsættes her]</span><br>
+      v/ Mads Vigge Sølling Ørnbo<br>
+      Nærumgårdsvej 112, 2850 Nærum<br>
+      CVR 46678044<br>
       <a href="mailto:viggestudiosprimary@gmail.com">viggestudiosprimary@gmail.com</a><br>
       <a href="tel:+4561383689">61 38 36 89</a>
     </p>

@@ -6,6 +6,20 @@
 <meta name="description" content="Vigge Studios leverer professionel DJ samt udlejning af lyd, lys og røgmaskiner til private fester og erhvervsarrangementer.">
 <meta name="theme-color" content="#1A0A03">
 
+<script>
+  /* GitHub Pages' "Enforce HTTPS" kan først slås til når deres DNS-tjek
+     er færdigt, og indtil da omdirigeres http:// ikke. Flere netværk —
+     blandt andet skolenet — filtrerer eller advarer mod usikre sider,
+     hvilket får siden til at fremstå nede. Dette flytter over på https
+     med det samme. Kan fjernes når fluebenet er sat i repo-indstillingerne. */
+  (function () {
+    var v = location.hostname;
+    if (location.protocol === "http:" && v !== "localhost" && v !== "127.0.0.1") {
+      location.replace("https://" + location.host + location.pathname + location.search + location.hash);
+    }
+  })();
+</script>
+
 <!-- Siden svarer på både www, apex og github.io. Uden canonical
      tæller de som tre kopier af samme indhold. -->
 <link rel="canonical" href="https://www.viggestudios.com/">
@@ -44,6 +58,15 @@
   "telephone": "+4561383689",
   "image": "https://www.viggestudios.com/assets/strandbar.jpeg",
   "logo": "https://www.viggestudios.com/assets/vigge-studios-logo.png",
+  "legalName": "Vigge Studios v/ Mads Vigge Sølling Ørnbo",
+  "vatID": "DK46678044",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Nærumgårdsvej 112",
+    "postalCode": "2850",
+    "addressLocality": "Nærum",
+    "addressCountry": "DK"
+  },
   "sameAs": ["https://www.instagram.com/viggestudios/"],
   "areaServed": { "@type": "Country", "name": "Danmark" },
   "knowsLanguage": "da",
@@ -713,8 +736,13 @@
 
     <div class="footer-contact">
       <a href="mailto:viggestudiosprimary@gmail.com">viggestudiosprimary@gmail.com</a>
-      <a href="tel:+4561383689">61 38 36 89</a>
+      <a class="footer-tel" href="tel:+4561383689">61 38 36 89</a>
       <a href="https://instagram.com/viggestudios" target="_blank" rel="noopener noreferrer">@viggestudios</a>
+      <address class="footer-address">
+        Vigge Studios v/ Mads Vigge Sølling Ørnbo<br>
+        Nærumgårdsvej 112, 2850 Nærum<br>
+        CVR 46678044
+      </address>
     </div>
   </div>
 
