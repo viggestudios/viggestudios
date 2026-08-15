@@ -378,13 +378,22 @@
       el.classList.toggle("is-hidden", y > 460 && y > last && !body.classList.contains("is-locked"));
 
       if (sticky) {
-        // visible once past the hero, hidden while the contact form is on screen
-        var atContact = false;
+        // visible once past the hero, but hidden while the contact form is on
+        // screen and as soon as any part of the footer credit appears, so the
+        // button never sits on top of either
+        var covering = false;
         if (contact) {
-          var r = contact.getBoundingClientRect();
-          atContact = r.top < window.innerHeight * 0.72 && r.bottom > 0;
+          var rc = contact.getBoundingClientRect();
+          covering = rc.top < window.innerHeight * 0.72 && rc.bottom > 0;
         }
-        sticky.classList.toggle("is-in", y > 560 && !atContact);
+        if (!covering) {
+          var credit = doc.querySelector(".credit");
+          if (credit) {
+            var rk = credit.getBoundingClientRect();
+            covering = rk.top < window.innerHeight && rk.bottom > 0;
+          }
+        }
+        sticky.classList.toggle("is-in", y > 560 && !covering);
       }
       last = y;
     }

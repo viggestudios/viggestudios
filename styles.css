@@ -1464,6 +1464,54 @@ body.loaded .hero-meta { opacity: 1; }
   font-size: 12.5px; color: rgba(247, 231, 196, 0.52);
 }
 
+/* --- studio-kreditering --- */
+.credit {
+  position: relative; overflow: hidden;
+  display: flex; align-items: center; justify-content: space-between; gap: clamp(18px, 3vw, 36px);
+  flex-wrap: wrap;
+  width: calc(100% - var(--pad) * 2);
+  max-width: var(--wrap);
+  margin: clamp(30px, 4vw, 44px) auto 0;
+  padding: clamp(26px, 3.6vw, 40px) clamp(24px, 4vw, 46px);
+  border-radius: var(--r-lg);
+  border: 1px solid rgba(252, 198, 98, 0.24);
+  background: linear-gradient(140deg, rgba(58, 27, 8, 0.85), rgba(26, 10, 3, 0.92));
+  color: var(--night-text);
+  transition: border-color 0.5s, transform 0.6s var(--ease), background 0.5s;
+}
+.credit:hover { border-color: rgba(252, 100, 0, 0.55); transform: translateY(-4px); }
+.credit-glow {
+  position: absolute; left: 12%; top: -70%;
+  width: 320px; height: 320px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(252, 100, 0, 0.28), transparent 66%);
+  pointer-events: none;
+}
+.credit-text { position: relative; z-index: 2; display: grid; gap: 6px; }
+.credit-text b {
+  font-family: var(--font-display); font-weight: 700;
+  font-size: clamp(24px, 3.4vw, 42px); line-height: 1.04; letter-spacing: -0.025em;
+  color: var(--yellow);
+}
+.credit-text em {
+  font-style: normal; font-family: var(--font-mono);
+  font-size: clamp(11px, 1.2vw, 13px); letter-spacing: 0.1em;
+  color: rgba(247, 231, 196, 0.68);
+}
+.credit-cta {
+  position: relative; z-index: 2;
+  display: inline-flex; align-items: center; gap: 10px;
+  padding: 14px 26px; border-radius: 999px;
+  background: var(--orange); color: #fff;
+  font-size: 14.5px; font-weight: 600; white-space: nowrap;
+  box-shadow: 0 14px 32px -14px rgba(252, 100, 0, 0.9);
+  transition: gap 0.4s var(--ease), box-shadow 0.4s;
+}
+.credit:hover .credit-cta { gap: 14px; box-shadow: 0 20px 40px -14px rgba(252, 100, 0, 1); }
+@media (max-width: 900px) {
+  .credit { flex-direction: column; align-items: flex-start; text-align: left; }
+  .credit-cta { width: 100%; justify-content: center; }
+}
+
 .footer-bottom {
   padding-top: 22px;
   display: flex; flex-wrap: wrap; gap: 10px 20px; justify-content: space-between; align-items: center;
