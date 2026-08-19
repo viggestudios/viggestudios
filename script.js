@@ -744,7 +744,7 @@
     var done = $("#book-done");
     var lastFocus = null;
 
-    var data = { type: "", ydelser: [], dato: "", gaester: "80", navn: "", tlf: "", mail: "", sted: "" };
+    var data = { type: "", ydelser: [], dato: "", starttid: "", sluttid: "", gaester: "80", navn: "", tlf: "", mail: "", sted: "" };
 
     /* ---- open / close ---- */
     function open(e) {
@@ -866,7 +866,7 @@
     if (range) { range.addEventListener("input", paintRange); paintRange(); }
 
     /* ---- plain fields ---- */
-    [["#bk-dato", "dato"], ["#bk-navn", "navn"], ["#bk-tlf", "tlf"], ["#bk-mail", "mail"], ["#bk-sted", "sted"]]
+    [["#bk-dato", "dato"], ["#bk-starttid", "starttid"], ["#bk-sluttid", "sluttid"], ["#bk-navn", "navn"], ["#bk-tlf", "tlf"], ["#bk-mail", "mail"], ["#bk-sted", "sted"]]
       .forEach(function (pair) {
         var el = $(pair[0]);
         if (el) el.addEventListener("input", function () { data[pair[1]] = el.value.trim(); });
@@ -889,6 +889,8 @@
         row("Arrangement", data.type) +
         row("Vi leverer", data.ydelser.join(" · ")) +
         row("Dato", dato) +
+        row("Starttidspunkt", data.starttid) +
+        row("Sluttidspunkt", data.sluttid) +
         row("Gæster", data.gaester >= 400 ? "400+" : "ca. " + data.gaester) +
         row("Navn", data.navn) +
         row("Telefon", data.tlf) +
@@ -917,6 +919,8 @@
           Arrangement: data.type,
           "Vi leverer": data.ydelser.join(" · "),
           Dato: dato,
+          Starttidspunkt: data.starttid,
+          Sluttidspunkt: data.sluttid,
           "Gæster": data.gaester >= 400 ? "400+" : "ca. " + data.gaester,
           Navn: data.navn,
           Telefon: data.tlf,
